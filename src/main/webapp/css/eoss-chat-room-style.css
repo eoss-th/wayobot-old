@@ -42,6 +42,7 @@
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;  
+	font-size: 16px;
 }
 
 .eoss_msg_l{
