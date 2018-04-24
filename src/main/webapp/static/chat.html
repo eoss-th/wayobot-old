@@ -1,0 +1,13 @@
+<head>
+</head>
+<body>
+<div id="eoss-chatbox-container" data-greet="Hello word" data-botId=""></div>
+<button id="EossButtonQuery" onclick="sendQuery()">query</button>
+<script>(function(d, s, id) {
+  var js, ejs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = '/js/eoss-sdk.js';
+  ejs.parentNode.insertBefore(js, ejs);
+}(document, 'script', 'eoss-jssdk'));</script>
+</body>

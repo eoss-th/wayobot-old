@@ -1,0 +1,142 @@
+
+.eoss_msg_wrap {
+	display:none;
+}
+.eoss_msg_wrap.active{
+    display: block;
+}
+.eoss_msg_head{
+	background:#f39c12;
+	color:white;
+	padding:15px;
+	font-weight:bold;
+	cursor:pointer;
+	border-radius:5px 5px 0px 0px;
+	background:#3498db;
+	padding-right: 30px;
+}
+
+.eoss_msg_box{
+	position:fixed;
+	bottom:-5px;
+	max-width:250px;
+	background:white;
+	border-radius:6px 6px 0px 0px;
+	border:solid 1px #3498db;
+	right:20px;
+	z-index: 1000;
+}
+
+.eoss_msg_body{
+	background:white;
+	height:200px;
+	font-size:12px;
+	padding:15px;
+	overflow:auto;
+	overflow-x: hidden;
+}
+.eoss_msg_input{
+	width:100%;
+	border: 1px solid white;
+	border-top:1px solid #DDDDDD;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;  
+}
+
+.eoss_msg_l{
+	position:relative;
+	background:#FDE4CE;
+	padding:10px;
+	min-height:10px;
+	margin-bottom:5px;
+	margin-right:10px;
+	border-radius:5px;
+}
+.eoss_msg_l:before{
+	content:"";
+	position:absolute;
+	width:0px;
+	height:0px;
+	border: 10px solid;
+	border-color: transparent #FDE4CE transparent transparent;
+	left:-20px;
+	top:7px;
+}
+
+
+.eoss_msg_r{
+	background:#EEF2E7;
+	padding:10px;
+	min-height:15px;
+	margin-bottom:5px;
+	position:relative;
+	margin-left:10px;
+	border-radius:5px;
+	word-wrap: break-word;
+}
+.eoss_msg_r:after{
+	content:"";
+	position:absolute;
+	width:0px;
+	height:0px;
+	border: 10px solid;
+	border-color: transparent transparent transparent #EEF2E7;
+	right:-20px;
+	top:7px;
+}
+#eoss-sendMessage{
+    width: 100%;
+    background: #3498db;
+    color: white;	
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 500px) {
+	.eoss_mobile {
+		width: 100%;
+	    right: 0;
+	    max-width: 100%;
+	
+	}	
+	.mobile{
+		max-width: 80%;
+	}
+	
+}
+.eoss_msg_l img{
+	width: 30px;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+.plus-bot{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*.eoss_mobile .eoss_msg_head{
+	height: 7%;
+}
+.eoss_mobile .eoss_msg_wrap{
+	height: 93%;
+}
+.eoss_mobile .eoss_msg_body{
+	height: 70%;
+}
+.eoss_mobile .eoss_msg_footer{
+	height: 30%;
+}
+.eoss_mobile .eoss_msg_input{
+	height: 80%;
+	min-height: auto;
+}
+.eoss_mobile #eoss-sendMessage{
+    height: 20%;
+}*/

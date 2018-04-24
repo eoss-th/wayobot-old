@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+	body {
+		max-width: 70%;
+		margin: auto;
+		margin-top: 50px;
+	}
+	#sendval{
+		width: 100%;
+	}
+	select{
+		margin-bottom: 10px;
+	}
+	#getval{
+		margin-top: 10px;
+		border: 1px solid;
+		min-height: 50px;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<label>Service</label>
+		<select id="service">
+			<option value="first" disabled selected="selected">select</option>
+			<option value="addAccount">Add Account</option>
+			<option value="getAccount">Get Account</option>
+			<option value="editAccount">Edit Account</option>
+			<option value="addSubAccount">Add Sub Account</option>
+			<option value="getSubAccount">get Sub Account</option>
+			<option value="editSubAccount">Edit Sub Account</option>
+			<option value="delSubAccount">Delete Sub Account</option>
+			<option value="generateToken">Generate Token</option>
+			<option value="getToken">Get Token</option>
+			<option value="addOrders">Add Orders</option>
+			<option value="editOrders">Edit Orders</option>
+			<option value="getOrders">Get Orders</option>
+			<option value="addChatLog">Add ChatLog</option>
+			<option value="getChatLog">Get ChatLog</option>
+		</select>
+
+		<input type="text" id="sendval" />
+	</div>
+	<hr>
+	<div>
+		<button id="send" onclick="sendToServlet()" style="display: none;">Send Value</button>
+		<button id="get" onclick="getFromServlet()" style="display: none;">Get Value</button>
+		<div id="getval"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	var url = "/testservice";
+	var method ="";
+	$('#service').change(function() {
+		if($(this).val() == "addAccount"){
+			url = "/service/v0_001/account"
+			method = "PUT"
+			$('#sendval').val("userName=val&passWord=val&accName=val&domainName=val&billType=val&email=val&tel=val&dao=addAccount");
+			$('#send').show();
+			$('#get').hide();
+		}
+		if($(this).val() == "addSubAccount"){
+			$('#sendval').val("accountId=val&userName=val&passWord=val&subAccName=val&role=val&dao=addSubAccount");
+			$('#send').show();
+			$('#get').hide();
+		}   	
+		if($(this).val() == "getAccount"){
+			$('#sendval').val("?accountId=&dao=getAccount");
+			$('#get').show();
+			$('#send').hide();
+			url = "/service/v0_001/account"
+		}   
+		if($(this).val() == "getSubAccount"){
+			$('#sendval').val("?accountId=&userName=&dao=getSubAccount");
+			$('#get').show();
+			$('#send').hide();
+			url = "/service/v0_001/subAccount"
+		}   
+		if($(this).val() == "editAccount"){
+			$('#sendval').val("accountId=&accName=val&domainName=val&billType=val&email=val&tel=val&dao=editAccount");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "editSubAccount"){
+			$('#sendval').val("userName=val&passWord=val&subAccName=val&role=val&dao=editSubAccount");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "delSubAccount"){
+			$('#sendval').val("userName=val&dao=delSubAccount");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "generateToken"){
+			$('#sendval').val("userName=&age=&dao=generateToken");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "getToken"){
+			$('#sendval').val("?userName=&dao=getToken");
+			$('#get').show();
+			$('#send').hide();
+		}  
+		if($(this).val() == "addOrders"){
+			$('#sendval').val("orderId=&botId=&Price=00.0&accountId=&status=&dao=addOrders");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "editOrders"){
+			$('#sendval').val("orderId=&botId=&Price=00.0&accountId=&status=&dao=editOrders");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "getOrders"){
+			$('#sendval').val("?orderId=&accountId=&botId=&status=&dao=getOrders");
+			$('#get').show();
+			$('#send').hide();
+		} 
+		if($(this).val() == "addChatLog"){
+			$('#sendval').val("chanelName=&message=&readFlag=true&accountId=&botId=&replyMessage=&dao=addChatLog");
+			$('#get').hide();
+			$('#send').show();
+		}  
+		if($(this).val() == "getChatLog"){
+			$('#sendval').val("?chanelName=&dao=getChatLog");
+			$('#get').show();
+			$('#send').hide();
+		}
+	});
+	
+	function sendToServlet(){
+		var data = $("#sendval").val();
+	 	if(data){
+		 	var ajax = new XMLHttpRequest();
+		 	ajax.open(method, url, true);
+		 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		 	ajax.send(data);
+
+		 	ajax.onreadystatechange = function() {
+		 	  	if (ajax.readyState == 4 && ajax.status == 200) {		 
+		 			var data = ajax.responseText;
+		 			console.log(data);
+		 		}
+		 	}	
+	 	} 	
+	}
+	
+
+	function getFromServlet() {
+		var getUrl = url+$("#sendval").val();
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", getUrl, true);
+		ajax.setRequestHeader("Content-type",
+				"application/x-www-form-urlencoded");
+		ajax.send();
+
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState == 4 && ajax.status == 200) {
+				var data = ajax.responseText;
+				$("#getval").html(data)
+				console.log(data);
+			}
+		}
+	}
+</script>
+</html>

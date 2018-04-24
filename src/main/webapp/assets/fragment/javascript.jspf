@@ -1,0 +1,10 @@
+	<script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="/assets/js/convertCountryName.js"></script>
+	<script src="/assets/js/vendor/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+	<script src="/assets/js/plugins.js"></script>
+	<script src="/assets/js/modernizr.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/jquery.sldr.js"></script>
+	<script src="/assets/js/qrcode.js"></script>
+	<script src="/assets/js/qrcode.min.js"></script>

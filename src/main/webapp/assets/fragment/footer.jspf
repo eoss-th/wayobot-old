@@ -1,0 +1,25 @@
+	<section id="footer-menu" class="sections footer-menu" style="padding-bottom: 0;padding-top: 0;display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="footer-menu-wrapper">
+
+					<div class="text-center">
+						<div class="single_right_contact">
+
+							<div class="contact_address margin-top-40">
+								<img src="assets/images/LIMZ.png" width="125"
+									height="125" /> <br>
+								<br> <span><a
+									href="https://github.com/eoss-th/eoss-brain" target="_blank">Power
+										by <b>LIMZ</b>
+								</a></span>
+								<br>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>

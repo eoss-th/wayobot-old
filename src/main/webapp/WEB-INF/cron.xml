@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/sessionMapServlet</url>
+    <schedule>every 50 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/clearSessionService</url>
+    <schedule>every day 0:00</schedule>
+    <timezone>Asia/Bangkok</timezone>
+  </cron>
+</cronentries>

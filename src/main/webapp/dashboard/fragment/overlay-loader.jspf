@@ -1,0 +1,12 @@
+<div id="overlayloader" class="overlayBot" style="display: none;">
+	<div class="overlaybot" style="background-color: transparent;color: white;text-align: center;top: 40%;left: 40%;">
+		<h1>
+			Uploading ...
+		</h1>
+	</div>
+</div>
+<div id="loader" class="overlayBot" style="display: none;">
+	<div style="width: 100%;height: 100%;z-index: 200">
+		<div class="loader"></div> 
+	</div>	
+</div>

@@ -1,0 +1,38 @@
+<%@ include file="/assets/fragment/fbSDK.jspf"%>
+<nav class="navbar navbar-default navbar-fixed">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#navigation-example-2">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="PageName" href="#" style="text-transform: uppercase;">PageName</a> <a
+				class="dropdown-toggle" style="line-height: 50px; cursor: pointer;">
+				<select id="selectbotlist" onchange="setAttr(this.value)"
+				style="height: 30px;margin-left: 10px;">
+			</select>
+				<button id="addNewBot" class="btn btn-default btn-block"
+					onclick="overlayPopup('overlay-addbot')">+</button>
+			</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="/" class="dropdown-toggle"> <i
+						class="pe-7s-home"></i> <fmt:message key="btt.home" />
+				</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<form id="logoutFormId"
+						style="padding-left: 20px; padding-right: 20px;">
+						<button class="btn btn-default btn-block" type="submit"
+							id="logoutForm" style="background-color: white;"><fmt:message key="btt.logout" /></button>
+					</form>
+				</li>
+				<li class="separator hidden-lg"></li>
+			</ul>
+		</div>
+	</div>
+</nav>

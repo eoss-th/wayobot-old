@@ -1,0 +1,20 @@
+<div id="overlay-payment" class="overlayBot" style="display: none;">
+	<div class="overlaybot" style="top: 10%;">
+		<div class="row">
+			<div class="col-md-2" style="padding: 10px 10px 0 0; float: right;">
+				<button class="btn btn-default btn-block" onclick="overlayPopup('overlay-payment')">X</button>
+			</div>
+		</div>
+		<div class="row overlayBotCenter">
+			<label class="paylabel"></label>
+		</div>
+		<div class="row overlayBotCenter">
+			<label>If you want to use another payment method please
+				contact us</label><br> <label>Email: <%=contactEmail%></label><br>
+			<label>Tel: <%=contactTel%></label><br>
+		</div>
+		<br>
+		<div id="paymentButtonList" style="max-height: 350px;overflow: auto;">	
+		</div>
+	</div>
+</div>

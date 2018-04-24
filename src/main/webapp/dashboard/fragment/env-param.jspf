@@ -1,0 +1,53 @@
+<%@ page import="com.example.appengine.pusher.PusherService" %>
+<%
+	String userName = "";
+	String accountId = "";
+	String token = "";
+	String userEmail="";
+	String domain = System.getenv("domain");
+	String pusherVer = System.getenv("pusherVersion");
+	String inputRaw = System.getenv("inputRaw");
+	String inputQA = System.getenv("inputQA");
+	String contactEmail = System.getenv("contactEmail");
+	String contactTel = System.getenv("contactTel");
+	String botListSelected = null;
+	String pusherKey = "";
+	String pusherCluster = "";
+	String app_id = "";
+	String merchantId = System.getenv("merchantId");
+	String app_secret = "";
+	
+	if (session != null) {
+		if (session.getAttribute("token") != null) {
+			accountId = (String) session.getAttribute("accountId");
+			String name = (String) session.getAttribute("token");
+			userName = (String) session.getAttribute("userName");
+			token = (String) session.getAttribute("token");
+			botListSelected = (String) session.getAttribute("botListSelected");
+			userEmail = (String) session.getAttribute("email");
+			pusherKey = (String) session.getAttribute("pusherKey");
+			pusherCluster = (String) session.getAttribute("pusherCluster");
+			app_id = (String) session.getAttribute("app_id");
+			app_secret = (String) session.getAttribute("app_secret");
+		} else {
+			response.sendRedirect("../index.jsp");
+		}
+	}
+%>
+
+<script type="text/javascript">
+		var accountId = '<%=accountId%>';
+	 	var domain = '<%=domain%>';
+		var pusherVer = '<%=pusherVer%>';
+		var botListSelected = '<%=botListSelected%>';
+		var pusherKey = '<%= pusherKey %>';
+		var pusherCluster = '<%= pusherCluster %>';	
+		var inputQA = '<%= inputQA %>';
+		var inputRaw = '<%= inputRaw %>';
+		var userEmail = '<%= userEmail %>';
+		var merchantId = '<%= merchantId %>';
+		var renew_text = '<fmt:message key="btt.payment.renew" />';
+		var paymentProcess_text = '<fmt:message key="btt.payment.process" />';
+		var sending_text = '<fmt:message key="btt.sending" />';
+		var notification_text = '<fmt:message key="btt.notification" />';
+</script>

@@ -1,0 +1,37 @@
+<div class="sidebar" data-color="purple"
+	data-image="../assets/img/sidebar-5.jpg">
+	<div class="sidebar-wrapper">
+		<div class="logo">
+			<a class="simple-text"> <%= userName %>
+			</a>
+		</div>
+
+		<ul class="nav">
+			<li class="dashboard"><a href="dashboard.jsp"> <i
+					class="pe-7s-graph"></i>
+					<p><fmt:message key="sidbar.dashboard" /></p>
+			</a></li>
+			<li class="compose"><a href="compose.jsp"> <i class="pe-7s-pen"></i>
+					<p><fmt:message key="sidbar.compose" /></p>
+			</a></li>	
+			<li class="show-case"><a href="show-case.jsp"> <i class="pe-7s-albums"></i>
+					<p><fmt:message key="sidbar.showcase" /></p>
+			</a></li>	
+			<li class="push-service"><a href="push-service.jsp"> <i class="pe-7s-bell"></i>
+					<p><fmt:message key="sidbar.pushservice" /></p>
+			</a></li>							
+			<li class="chat-box"><a href="chat-box.jsp"> <i class="pe-7s-news-paper"></i>
+					<p><fmt:message key="sidbar.chatbotscript" /></p>
+			</a></li>
+			<li class="api"><a href="api.jsp"> <i class="pe-7s-plugin"></i>
+					<p><fmt:message key="sidbar.api" /></p>
+			</a></li>			
+			<li class="order-history"><a href="order-history.jsp"> <i class="pe-7s-notebook"></i>
+					<p><fmt:message key="sidbar.orderhistory" /></p>
+			</a></li>
+			<li class="profile"><a href="profile.jsp"> <i class="pe-7s-user"></i>
+					<p><fmt:message key="sidbar.profile" /></p>
+			</a></li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,83 @@
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '987609741414262',
+	      cookie     : true,
+	      xfbml      : true,
+	      version    : 'v2.12'
+	    });
+	      
+	    FB.getLoginStatus(function(response) {
+	        statusChangeCallback(response);
+	    });   
+	      
+	  };
+	
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	  
+	  function statusChangeCallback(response){
+		  if(response.status === "connected"){
+			  signInApi();
+		  }
+	  }
+	  
+	  function checkLoginState() {
+		  FB.getLoginStatus(function(response) {
+		    statusChangeCallback(response);
+		  });
+		}
+	  function signInApi(){
+		  FB.api('/me?fields=id,name,email,hometown',function(response){
+			  <% if (session.getAttribute("token") == null) { %>
+			  var url = "/fbSignIn";
+
+			  if(response && !response.error){
+				  overlayOn('loader');
+					var lang = navigator.language;
+					var langCode = lang.split("-");
+					var data = "userId="+response.id+"&email="+response.email+"&name="+response.name+"&language="+langCode[0];
+				 	var ajax = new XMLHttpRequest();
+				 	ajax.open("POST", url, true);
+				 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				 	ajax.send(data);
+
+				 	ajax.onreadystatechange = function() {
+				 	  	if (ajax.readyState == 4 && ajax.status == 200) {		 
+				 			var data = ajax.responseText;
+				 			var json = JSON.parse(data);
+							if(json.status == "success"){
+								window.location.href = "/dashboard/dashboard.jsp";
+							}else{
+								alert(json.message);
+							}
+				 		}
+				 	  	overlayOff('loader');
+				 	}	
+			  }
+			  <% } %>
+		  });
+	  }
+
+	  function fbLogoutUser() {
+		   FB.getLoginStatus(function(response) {
+		       if (response && response.status === 'connected') {
+		           FB.logout(function(response) {
+		        	   relocate();
+		           });
+		       }else{
+		    	   relocate();
+		       }
+		   });
+		   
+		}
+	  
+	  function relocate(){
+		  window.location.href = "/";
+	  };
+	</script>
