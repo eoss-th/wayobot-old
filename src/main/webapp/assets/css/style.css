@@ -17,6 +17,7 @@ body {
     margin-right: 0;
     font-family: 'robotolight';
     font-weight: 300;
+    overflow: hidden;
 }
 ._4z_b{
     width: 160px;
