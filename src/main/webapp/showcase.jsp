@@ -57,13 +57,15 @@
 	<div class="scrollup">
 		<a href="#"><i class="fa fa-chevron-up"></i></a>
 	</div>
+	
 	<% 
 		if (session.getAttribute("token") != null) {
-			if(bot_accountId == session.getAttribute("accountId")){
+			if(bot_accountId.equals(session.getAttribute("accountId")) ){
 				session.setAttribute("botListSelected", bot_botId);
 			}
 		}	
 	%>
+	
 	<%@ include file="/assets/fragment/overlay.jspf"%>
 	<%@ include file="/assets/fragment/javascript.jspf"%>
 	<script type="text/javascript">

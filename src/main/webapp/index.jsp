@@ -48,12 +48,12 @@
 	</header>
 	<%} %>
 
-	<section class="contact sections" style="padding: 0px;">
+	<section class="contact sections" style="padding: 0px;padding-bottom: 10px;">
 		<div style="width: 100%;padding: 0px;" id="showCase">
 			<div class="col-md-2 col-sm-3">
 					<div class="img-bg" onclick="<% if (session.getAttribute("token") != null) { %>addShowCase();<% }else{ %>overlayOn('register')<% } %>" style="cursor: pointer;">
-						<div class="img-bg" style="background-color:rgba(0, 0, 0, 0.15);display: table;" >
-							<div class="description" style="font-size: 80px;text-align: center;font-weight: bold;">
+						<div class="img-bg" style="display: table;border: 1px solid rgba(0, 0, 0, 0.15);" >
+							<div class="description" style="font-size: 80px;text-align: center;font-weight: bold;color: rgba(0, 0, 0, 0.15);">
 								+
 							</div>
 						</div>

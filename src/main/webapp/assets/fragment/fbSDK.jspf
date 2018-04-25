@@ -52,7 +52,7 @@
 				 			var data = ajax.responseText;
 				 			var json = JSON.parse(data);
 							if(json.status == "success"){
-								window.location.href = "/dashboard/dashboard.jsp";
+								window.location.href = "/";
 							}else{
 								alert(json.message);
 							}

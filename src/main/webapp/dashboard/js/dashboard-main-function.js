@@ -11,6 +11,7 @@ function getUserBotList(url,elem) {
 			userBotList = json;
 			for (var i = 0; i < userBotList.length; i++) {
 				var obj = userBotList[i];
+				console.log(botListSelected);
 				if (obj.propertyMap.notiNumber == botListSelected) {
 					$(elem).append(
 							"<option value=\"" + obj.propertyMap.notiNumber
