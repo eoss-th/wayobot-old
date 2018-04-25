@@ -98,7 +98,7 @@
 		<dependency>
 			<groupId>com.github.eoss-th</groupId>
 			<artifactId>eoss-brain</artifactId>
-			<version>socialbot.1</version>
+			<version>social.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.appengine.tools</groupId>
