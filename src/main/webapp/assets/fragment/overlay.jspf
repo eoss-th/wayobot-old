@@ -150,7 +150,7 @@
 										</div>
 										
 										<div style="margin-top:10px;height: 40px;line-height: 40px;display: inline-block;">
-											<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">Register</fb:login-button>
+											<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">Log In</fb:login-button>
 										</div>
 										
 									</div>

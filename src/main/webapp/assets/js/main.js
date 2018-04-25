@@ -291,7 +291,7 @@ jQuery(document).ready(function ($) {
 		 			var data = ajax.responseText;
 		 			var json = JSON.parse(data);
 		 			if(json.status == "success"){
-		 				window.location.href = "/dashboard/dashboard.jsp";
+		 				window.location.href = "/";
 		 			}else{
 		 				$("#login-err").html(json.message);
 		 			}
