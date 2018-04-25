@@ -44,15 +44,13 @@
 							email = (String) session.getAttribute("email");
 					%>
 							<style type="text/css">.cd-pricing-wrapper form{display: block;}.cd-select{display: none !important;}</style>
-							<li><a href="/dashboard/dashboard.jsp" id="displayUn"></a></li>
+							<li><a href="/dashboard/profile.jsp" id="displayUn"></a></li>
 							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.dashboard" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.compose" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.showcase" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.pushservice" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.chatbotscript" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.api" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.orderhistory" /></a></li>
-							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.profile" /></a></li>
+							<li><a href="/dashboard/compose.jsp.jsp"><fmt:message key="sidbar.compose" /></a></li>
+							<li><a href="/dashboard/show-case.jsp"><fmt:message key="sidbar.showcase" /></a></li>
+							<li><a href="/dashboard/push-service.jsp"><fmt:message key="sidbar.pushservice" /></a></li>
+							<li><a href="/dashboard/chat-box.jsp"><fmt:message key="sidbar.chatbotscript" /></a></li>
+							<li><a href="/dashboard/api.jsp"><fmt:message key="sidbar.api" /></a></li>
 							<li class="login"><a id="logout" style="cursor: pointer;width: auto;"><fmt:message key="btt.logout" /></a></li>
 					<%
 						}else{

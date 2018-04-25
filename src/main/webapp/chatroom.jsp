@@ -73,7 +73,7 @@
 
 	</script>	
 	
-	<div data-domain="https://shopbot-stg.appspot.com" data-title="Support ChatBot" data-botid="1522661824891" data-accountid="F67E4B90-B0CC-4006-872F-4F4AFE13F634" class="eoss_msg_box" id="eoss-chatbox-container" data-greet="Hello !!"></div>
+	<div data-domain="https://shopbot-stg.appspot.com" data-title="Support ChatBot" data-botid="1524664411414" data-accountid="1889695984416451" class="eoss_msg_box" id="eoss-chatbox-container" data-greet="Hello !!"></div>
 
 <script src="https://js.pusher.com/4.1/pusher.min.js"></script><script>(function(d, s, id) { var js, ejs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://shopbot-stg.appspot.com/js/eoss-sdk-script.js';ejs.parentNode.insertBefore(js, ejs);}(document, 'script', 'eoss-sdk-script'));</script>
 </html>
