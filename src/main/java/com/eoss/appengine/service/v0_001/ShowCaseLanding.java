@@ -53,7 +53,7 @@ public class ShowCaseLanding extends HttpServlet{
 					req.setAttribute("showcase_title", ent.getProperty("title").toString());
 					req.setAttribute("showcase_description", ent.getProperty("description").toString());
 					req.setAttribute("showcase_owner", ent.getProperty("owner").toString());
-					resp = srp.setRespHead(resp);
+					resp = srp.setRespHead(resp,System.getenv("domain"));
 					getServletContext().getRequestDispatcher("/showcase.jsp").forward(req, resp);						
 				}else {
 					resp.sendRedirect("/index.jsp");

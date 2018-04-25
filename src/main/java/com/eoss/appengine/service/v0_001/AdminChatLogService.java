@@ -23,7 +23,7 @@ public class AdminChatLogService extends HttpServlet{
 		
 		List<Entity> le = chatlogDao.getChatLogByBotId(botId, readFlag);
 		String Json = srp.parseJsonEntityList(le);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(Json);
 	}
 }

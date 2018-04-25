@@ -28,7 +28,7 @@ public class LocaleService extends HttpServlet{
 		String status = localeDao.addLocale(locale);
 		String json = srp.parseJsonStatus("addlocale", status, "");
 		
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	@Override
@@ -37,7 +37,7 @@ public class LocaleService extends HttpServlet{
 		LocaleDAO localeDao = new LocaleDAO();
 		List<Entity> le = localeDao.getLocaleList(locale);
 		String json = srp.parseJsonEntityList(le);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

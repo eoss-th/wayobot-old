@@ -32,7 +32,7 @@ public class GetContext extends HttpServlet{
 		 JSONObject object = new JSONObject(context.properties);
 		 String json = srp.parseJsonObject(object);
 		 
-		 resp = srp.setRespHead(resp);
+		 resp = srp.setRespHead(resp,System.getenv("domain"));
 		 resp.getWriter().write(json);
 	}
 
@@ -63,7 +63,7 @@ public class GetContext extends HttpServlet{
 		 	}
 
 			
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(status);
 	}
 	 

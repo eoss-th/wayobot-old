@@ -20,7 +20,7 @@ public class ContextLogService extends HttpServlet{
 		String accountId = req.getParameter("accountId");
 		String chanel = req.getParameter("chanel");
 		String type = req.getParameter("type");
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		String json = "false";
 		ContextLogDAO contextDao = new ContextLogDAO();
 		Entity ent = contextDao.getContextLog(accountId, botId, chanel,type);

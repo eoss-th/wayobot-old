@@ -23,7 +23,7 @@ public class SubAccountService extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		sa = srq.setSubAccount(req);
 		json = srp.parseJsonEntityList(saDao.getSubAccountList(sa));
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	@Override
@@ -31,7 +31,7 @@ public class SubAccountService extends HttpServlet{
 		sa = srq.setSubAccount(req);
 		status = saDao.addSubAccount(sa);
 		json = srp.parseJsonStatus("addUser", status,"");
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	@Override

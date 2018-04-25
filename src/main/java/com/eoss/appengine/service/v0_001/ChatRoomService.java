@@ -37,7 +37,7 @@ public class ChatRoomService extends HttpServlet{
 
 		
 		String json = srp.parseJsonEntity(ent);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	
@@ -74,7 +74,7 @@ public class ChatRoomService extends HttpServlet{
 				json = srp.parseJsonStatus("addNewChatRoomBot", chatRoomDao.addRoom(chatRoom),"");
 			}
 			
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(json);
 		}
 	}
@@ -102,7 +102,7 @@ public class ChatRoomService extends HttpServlet{
 				}
 			}
 			
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(json);
 		}
 	}

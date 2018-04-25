@@ -23,7 +23,7 @@ public class GetBuyFlagService extends HttpServlet{
 		Entity ent = userBotDao.getByUserBotId(userbot.getUserBotId());
 
 		String json = ent.getProperty("BuyFlag").toString();
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

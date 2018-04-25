@@ -27,7 +27,7 @@ public class OrderHistorySevice extends HttpServlet{
 
 		List<Entity> orderList = orderDao.getOrdersList(orders);
 		String json = srp.parseJsonEntityList(orderList);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

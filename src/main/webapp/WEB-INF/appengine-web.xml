@@ -9,7 +9,7 @@
 		<env-var name="PUSHER_APP_KEY" value="c256028969d0d8721d7d" />
 		<env-var name="PUSHER_APP_SECRET" value="316f255369ff00bdbac3" />
 		<env-var name="PUSHER_CLUSTER" value="ap1" />
-		<env-var name="domain" value="https://www.wayobot.com" />
+		<env-var name="domain" value="https://shopbot-stg.appspot.com/" />
 		<!-- contact popup payment dashboard.jsp -->
 		<env-var name="contactTel" value="+6695 212 0 555" />
 		<env-var name="contactEmail" value="contact@eoss-th.com" />
@@ -22,7 +22,7 @@
 		<env-var name="secret" value="y7Ybo2YE" />
 		<!-- Generate script -->
 		<env-var name="pusherVersion" value="https://js.pusher.com/4.1/pusher.min.js" />
-		<env-var name="bucket" value="eoss-wayobot-bucket" />
+		<env-var name="bucket" value="eoss-chatbot-bucket" />
 		<env-var name="inputRaw"
 			value="แอบมองเธออยู่นะจ๊ะแต่เธอไม่รู้บ้างเลย\nแอบส่งใจให้นิดนิดแต่ดูเธอช่างเฉยเมย\nเอาหละเตรียมใจไว้หน่อยมันจะหัวก้อยต้องเสี่ยงกัน\nYeah Yeah Yeah\nคนน่ารักก็เยอะนะที่เดินอยู่ทั่วๆไป\nคนธรรมดาอย่างฉันนะเธอคงจะไม่สนใจ\nเอาหละเตรียมใจไว้เถอะเราเองก็ชักเริ่มไม่แน่ใจ\nYeah Yeah Yeah\nเหมือนว่าฉันนั้นเคว้งคว้างลอยไปกับเสียงเพลง\nยังคงบรรเลงไม่มีวันเลือนลาง\nเพราะไม่รู้ว่าเค้านั้นในใจแอบคิดอะไร\nยังคงกังวลไม่แน่ใจในคำตอบนั้น\nเพราะยังไงก็ต้องเสี่ยงรักไม่รักก็ต้องเสี่ยง\nCome on Come on Come on Come on baby\nให้คุกกี้ทำนายกัน\nKoisuru Fortune Cookie\nมาลุ้นดูสิอาจจะเจอความหวังที่ยังรออยู่\nHey Hey Hey\nเผื่อจะดีลองวัดกันดู\nเสี่ยงแต่คงต้องยิ้มต้องสู้กันไป\nHaato no Fortune Cookie\nมาลุ้นดูสิอาจจะเจอหัวใจของเธอข้างใน\nHey Hey Hey\nHey Hey Hey\nรักไม่รักจะรักไม่รักก็ลองเสี่ยงดูอีกสักนิด\nปาฏิหาริย์และดวงชะตาอาจทำให้เราไม่คาดคิด\nฉันมั่นใจว่าเราจะเป็นดั่งฝัน\nในวันแห่งความรักสักวันนึง\nอยากบอกเธอว่ารักแต่กลัวเธอนั้นเฉยเมย\nอยากบอกเธอให้รู้แต่ใจไม่กล้าซะเลย\nเธอจะรักฉันหรือเปล่าไม่อาจเดาได้เลยสักที\nYeah Yeah Yeah\nรู้ทั้งรู้ว่าเค้าใช้อะไรตัดสินใจ\nต้องน่ารักใช่มั้ยที่ใครเค้าคิดกัน\nฉันขอแค่ให้เค้าลองมองที่ข้างใน\nคงจะดีถ้ามีใจให้กับฉัน\nเพราะยังไงก็ต้องเสี่ยงรักไม่รักก็ต้องเสี่ยง\nPlease Please Please oh baby\nเป็นเช่นไรก็เป็นกัน\nKoisuru Fortune Cookie\nมาลุ้นดูสิอาจจะเจอความหวังที่ยังรออยู่\nHey Hey Hey\nเผื่อจะดีลองวัดกันดู\nเสี่ยงแต่คงต้องลุ้นต้องลองกันบ้าง\nNamida no Fortune Cookie\nมาลุ้นดูสิจบสุดท้ายอย่างดีแค่มีน้ำตา\nHey Hey Hey\nHey Hey Hey\nคิดแต่เรื่องดีดีก็โลกใบนี้เต็มไปด้วยความรัก\nน้ำตาไหลออกมาก็ธรรมดาอย่าไปซีเรียสนัก\nสายลมของพรุ่งนี้จะพาให้เรา\nได้เจอกับความรักซักวันนึง\nCome on Come on Come on Come on baby\nให้คุ้กกี้ทำนายกัน\nKoisuru Fortune Cookie\nมาลุ้นดูสิอาจจะเจอความหวังที่ยังรออยู่\nHey Hey Hey\nเผื่อจะดีลองวัดกันดู\nเสี่ยงแต่คงต้องยิ้มต้องสู้กันไป\nHaato no Fortune Cookie\nมาลุ้นดูสิอาจจะเจอหัวใจของเธอข้างใน\nHey Hey Hey\nHey Hey Hey\nรักไม่รักจะรักไม่รักก็ลองเสี่ยงดูอีกสักนิด\nปาฏิหาริย์และดวงชะตาอาจทำให้เราไม่คาดคิด\nฉันมั่นใจว่าเราจะเป็นดั่งฝัน\nในวันแห่งความรักสักวันนึง" />
 		<env-var name="inputQA"

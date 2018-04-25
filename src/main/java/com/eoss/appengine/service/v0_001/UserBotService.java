@@ -49,7 +49,7 @@ public class UserBotService extends HttpServlet{
 		}
 
 		
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	
@@ -98,7 +98,7 @@ public class UserBotService extends HttpServlet{
 		}
 
 		
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	
@@ -127,7 +127,7 @@ public class UserBotService extends HttpServlet{
 		}
 		
 		
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	

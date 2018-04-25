@@ -41,7 +41,7 @@ public class PusherCountService extends HttpServlet{
 				json = srp.parseJsonObject(p_count);
 			}
 		}
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

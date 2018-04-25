@@ -23,7 +23,7 @@ public class ShowcaseListChatRoom extends HttpServlet{
 			ShowCaseDAO shocaseDao = new ShowCaseDAO();
 			List<Entity> le = shocaseDao.getShowcaseList(accountId, publish);
 			String json = srp.parseJsonEntityList(le);
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(json);			
 		}
 	}

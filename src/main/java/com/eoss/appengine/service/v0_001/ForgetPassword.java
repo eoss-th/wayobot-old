@@ -37,7 +37,7 @@ public class ForgetPassword extends HttpServlet{
 				sendEmail.send("text","Reset Password", "Please use this password to log in and please change it to new password<br/>Password: "+pwd, sendTo, System.getenv("senGridEmail"));				
 			}
 		}
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

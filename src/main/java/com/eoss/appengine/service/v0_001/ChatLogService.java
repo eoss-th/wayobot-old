@@ -29,7 +29,7 @@ public class ChatLogService extends HttpServlet{
 		chatlog.setChanelName(sessionId);
 		List<Entity> list = chatlogDao.getChatLog(chatlog.getChanelName(),botId);
 		String json = srp.parseJsonEntityList(list);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,"*");
 		resp.getWriter().print(json);
 	}
 	

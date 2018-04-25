@@ -25,10 +25,10 @@ public class SignOut extends HttpServlet{
 			httpSession.invalidate();
 			
 			
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write("success");
 		}catch (Exception e) {
-			resp = srp.setRespHead(resp);
+			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write("fail");
 		}
 	}

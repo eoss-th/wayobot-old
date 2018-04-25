@@ -90,7 +90,7 @@ public class AuthorizeServlet extends HttpServlet {
 		// "channel_data":"{\"user_id\":\"23423435252\",\"user_info\":{\"displayName\":\"John
 		// Doe\"}}"
 		// }
-		response = srp.setRespHead(response);
+		response = srp.setRespHead(response,"*");
 		response.getWriter().append(auth);
 	}
 

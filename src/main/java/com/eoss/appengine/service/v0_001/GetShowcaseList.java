@@ -46,7 +46,7 @@ public class GetShowcaseList extends HttpServlet{
 	    	System.out.println("err"+e.getMessage());
 	    }
 	    String json = srp.parseJsonStatus("getShowCase", srp.parseJsonEntityList(results), results.getCursor().toWebSafeString());
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 		
 	}

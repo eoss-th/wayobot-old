@@ -35,7 +35,7 @@ public class AccountService extends HttpServlet{
 		String status;
 		account = srq.setAccount(req);
 		status = srp.parseJsonEntityList(accountDao.getAccountList(account));
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(status);
 	}
 	@Override
@@ -120,7 +120,7 @@ public class AccountService extends HttpServlet{
 			}
 		}
 
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(status);	
 	}
 

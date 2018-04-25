@@ -14,7 +14,7 @@ public class MessageService extends HttpServlet{
 	private SetRespPram srp = new SetRespPram();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,"*");
 		String json = srp.parseJsonStatus("message", "success", "test cross origin");
 		resp.getWriter().write(json);		
 	}

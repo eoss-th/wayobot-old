@@ -41,8 +41,8 @@ public class SetRespPram{
 		String json = new Gson().toJson(listChat);
 		return json;		
 	}
-	public HttpServletResponse setRespHead(HttpServletResponse resp) {
-		resp.setHeader("Access-Control-Allow-Origin", "*");
+	public HttpServletResponse setRespHead(HttpServletResponse resp,String domain) {
+		resp.setHeader("Access-Control-Allow-Origin", domain);
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("UTF-8");
 		return resp;

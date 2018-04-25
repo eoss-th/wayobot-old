@@ -26,7 +26,7 @@ public class BotService extends HttpServlet{
 		List<Entity> le = botTemplateDAO.getBotTemplateList(botTemplate);
 		
 		String json = srp.parseJsonEntityList(le);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 	@Override
@@ -37,7 +37,7 @@ public class BotService extends HttpServlet{
 		String status = botTemplateDAO.addBotTemplate(botTemplate);
 		String json = srp.parseJsonStatus("addBot", status, "");
 		
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 		
 	}

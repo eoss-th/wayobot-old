@@ -13,8 +13,9 @@
 	String path = bot_accountId+"/"+bot_botId;
 	if(bot_botId == null){
 		response.sendRedirect("/index.jsp");
-	}
+	}	
 %>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -56,7 +57,13 @@
 	<div class="scrollup">
 		<a href="#"><i class="fa fa-chevron-up"></i></a>
 	</div>
-	
+	<% 
+		if (session.getAttribute("token") != null) {
+			if(bot_accountId == session.getAttribute("accountId")){
+				session.setAttribute("botListSelected", bot_botId);
+			}
+		}	
+	%>
 	<%@ include file="/assets/fragment/overlay.jspf"%>
 	<%@ include file="/assets/fragment/javascript.jspf"%>
 	<script type="text/javascript">

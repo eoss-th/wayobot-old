@@ -146,7 +146,7 @@ public class BoardcastServlet extends HttpServlet {
 		}
 
 		String json = srp.parseJsonListChat(messages);
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,System.getenv("domain"));
 		resp.getWriter().write(json);
 	}
 }

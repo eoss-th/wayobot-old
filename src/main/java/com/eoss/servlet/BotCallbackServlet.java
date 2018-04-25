@@ -83,7 +83,7 @@ public class BotCallbackServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String chanel = chatlogDao.getChanel();
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,"*");
 		resp.getWriter().print(chanel);
 	}	
 	
@@ -198,7 +198,7 @@ public class BotCallbackServlet extends HttpServlet{
 				}
 			}			
 
-		resp = srp.setRespHead(resp);
+		resp = srp.setRespHead(resp,"*");
 		resp.setContentType("text/plain");
 		resp.setCharacterEncoding("UTF-8");	
 		resp.getWriter().print(reply);
