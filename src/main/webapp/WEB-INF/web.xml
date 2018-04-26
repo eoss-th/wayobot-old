@@ -338,10 +338,10 @@ com.eoss.appengine.service.v0_001.ShowcaseListChatRoom
 <servlet-name>sendMessage</servlet-name>
 <url-pattern>/filter/message</url-pattern>
 </servlet-mapping>
-<servlet-mapping>
+<!--<servlet-mapping>
 <servlet-name>HelloAppEngine</servlet-name>
 <url-pattern>/hello</url-pattern>
-</servlet-mapping>
+</servlet-mapping>  -->
 
 <filter>
 <display-name>BotFilter</display-name>

@@ -43,4 +43,10 @@
 		<property name="publish" direction="asc" />
 		<property name="timeStamp" direction="asc" />
 	</datastore-index>
+	<datastore-index kind="ShowCase" ancestor="false"
+		source="manual">
+		<property name="accountId" direction="asc" />
+		<property name="publish" direction="asc" />
+		<property name="timeStamp" direction="desc" />
+	</datastore-index>
 </datastore-indexes>

@@ -25,8 +25,8 @@ public class ShowCaseLanding extends HttpServlet{
 		ShowCaseDAO showcaseDao = new ShowCaseDAO();
 		
 		String[] data = req.getRequestURI().split("/");
-		String botId = data[3];
-		String accountId = data[2];
+		String botId = data[4];
+		String accountId = data[3];
 		String contextName = accountId+"/"+botId;
 		if(validateParam(accountId,botId)) {
 			Entity ent = showcaseDao.getShowCase(botId);
