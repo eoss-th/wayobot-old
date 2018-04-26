@@ -114,7 +114,7 @@
 	$("#addBot").click(function() {
 		var data = $("#addBot-form").serialize();
 	 	var ajax = new XMLHttpRequest();
-	 	ajax.open("PUT", "/service/v0_001/botService", true);
+	 	ajax.open("PUT", "/filter/service/v0_001/botService", true);
 	 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	 	ajax.send(data);
 
@@ -131,7 +131,7 @@
 
 	function getBotlist() {
 	 	var ajax = new XMLHttpRequest();
-	 	ajax.open("GET", "/service/v0_001/botService", true);
+	 	ajax.open("GET", "/filter/service/v0_001/botService", true);
 	 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	 	ajax.send();
 

@@ -6,7 +6,7 @@ var title;
 var language;
 function getContext(userBotId) {
 	overlayPopup('loader');
-	var url = "/getContext?userBotId=" + userBotId;
+	var url = "/filter/getContext?userBotId=" + userBotId;
 	var ajax = new XMLHttpRequest();
 	ajax.open("GET", url, true);
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -70,7 +70,7 @@ $('#update').click(function () {
 		$("#greetForm p").hide();
 		fields = value.split('_|_');
  		var http = new XMLHttpRequest();
- 		var url = "/getContext";
+ 		var url = "/filter/getContext";
  		var params = "userBotId="+fields[0]+"&greeting="+$("#greet").val()+"&unknown="+$("#unknown").val()+"&title="+$("#title").val()+"&language="+$("#countryLangContext").val();
  		http.open("POST", url, true);
 

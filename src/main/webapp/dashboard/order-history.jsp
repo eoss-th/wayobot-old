@@ -20,7 +20,7 @@
 							<div id="service-content" class="content">	
 									<label>Your new Order will update in 15min if after 15min still not found your order please contact us</label>
 									<div class="col-md-12">
-										<button style="width: auto;float: right;" class="btn btn-default btn-block" onclick="getOrderLog('/orderHistorySevice');"><fmt:message key="btt.reflesh" /></button>
+										<button style="width: auto;float: right;" class="btn btn-default btn-block" onclick="getOrderLog('/filter/orderHistorySevice');"><fmt:message key="btt.reflesh" /></button>
 									</div>
 									
 									<div class="col-md-12" style="margin-top: 10px;width: 100%;display: inline-block;">

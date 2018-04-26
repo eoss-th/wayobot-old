@@ -16,7 +16,7 @@ pusher.connection.bind('connected', function () {
 		notinum = $("#selectbotlist").val();
 		var fields = notinum.split('_|_');
 		connectPusher(fields[0],fields[1]);
-		getPushCount("/service/v0_001/pusherCountService");
+		getPushCount("/filter/service/v0_001/pusherCountService");
 		$("#chat_widget_button").show();		
 	});
 });
@@ -66,7 +66,7 @@ $('#chat_widget_button').click(function () {
         accountId: accountId
     }); 
     // trigger a server-side endpoint to send the message via Pusher
-    $.post('/message', data,
+    $.post('/filter/message', data,
         function (msg) {
 
             if (msg.status == "SUCCESS") {

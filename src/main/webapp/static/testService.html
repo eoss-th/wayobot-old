@@ -59,7 +59,7 @@
 	var method ="";
 	$('#service').change(function() {
 		if($(this).val() == "addAccount"){
-			url = "/service/v0_001/account"
+			url = "/filter/service/v0_001/account"
 			method = "PUT"
 			$('#sendval').val("userName=val&passWord=val&accName=val&domainName=val&billType=val&email=val&tel=val&dao=addAccount");
 			$('#send').show();
@@ -74,13 +74,13 @@
 			$('#sendval').val("?accountId=&dao=getAccount");
 			$('#get').show();
 			$('#send').hide();
-			url = "/service/v0_001/account"
+			url = "/filter/service/v0_001/account"
 		}   
 		if($(this).val() == "getSubAccount"){
 			$('#sendval').val("?accountId=&userName=&dao=getSubAccount");
 			$('#get').show();
 			$('#send').hide();
-			url = "/service/v0_001/subAccount"
+			url = "/filter/service/v0_001/subAccount"
 		}   
 		if($(this).val() == "editAccount"){
 			$('#sendval').val("accountId=&accName=val&domainName=val&billType=val&email=val&tel=val&dao=editAccount");

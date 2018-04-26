@@ -93,7 +93,7 @@ function appendBotlistTable(userBotList) {
 function setAttr(selected) {
 	var attr = selected.split('_|_');
 	var http = new XMLHttpRequest();
-	var url = "/setAttr";
+	var url = "/filter/setAttr";
 	var params = "botListSelected=" + attr[0];
 	http.open("POST", url, true);
 
@@ -123,7 +123,7 @@ function overlayPopup(elm) {
 //get buying status if status can't buy disable renew button
 function getBuyFlag(value) {
 	var http = new XMLHttpRequest();
-	var url = "/getBuyFlagService?botId=" + value;
+	var url = "/filter/getBuyFlagService?botId=" + value;
 	http.open("GET", url, true);
 
 	// Send the proper header information along with the request
@@ -253,7 +253,7 @@ function openTab(evt, tabName) {
 
 function getPaymentButton(botId) {
 	var ajax = new XMLHttpRequest();
-	ajax.open("GET", "/service/v0_001/botService", true);
+	ajax.open("GET", "/filter/service/v0_001/botService", true);
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 
@@ -296,7 +296,7 @@ $("#logoutFormId").submit(function(e) {
 	e.preventDefault();
 	
  	var ajax = new XMLHttpRequest();
- 	ajax.open("POST", "/service/signOut", true);
+ 	ajax.open("POST", "/filter/service/signOut", true);
  	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
  	ajax.send();
 

@@ -35,7 +35,7 @@
 	  function signInApi(){
 		  FB.api('/me?fields=id,name,email,hometown',function(response){
 			  <% if (session.getAttribute("token") == null) { %>
-			  var url = "/fbSignIn";
+			  var url = "/filter/fbSignIn";
 
 			  if(response && !response.error){
 				  overlayOn('loader');

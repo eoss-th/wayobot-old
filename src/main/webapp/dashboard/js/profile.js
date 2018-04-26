@@ -4,7 +4,7 @@ $("#changePassword").submit(function(e) {
 			e.preventDefault();
 			var data = $("#changePassword").serialize();
 			var method = "POST";
-			var url = "/changePassword";
+			var url = "/filter/changePassword";
 			if (data) {
 				var ajax = new XMLHttpRequest();
 				ajax.open(method, url, true);

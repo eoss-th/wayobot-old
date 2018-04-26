@@ -182,7 +182,7 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		var data = $("#registerForm").serialize();
 		var method = "PUT";
-		var url = "/service/v0_001/account";
+		var url = "/filter/service/v0_001/account";
 	 	if(data){
 		 	var ajax = new XMLHttpRequest();
 		 	ajax.open(method, url, true);
@@ -251,7 +251,7 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		var data = $("#forget").serialize();
 		var method = "POST";
-		var url = "/forgetPassword";
+		var url = "/filter/forgetPassword";
 	 	if(data){
 		 	var ajax = new XMLHttpRequest();
 		 	ajax.open(method, url, true);
@@ -279,7 +279,7 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		var data = $("#signIn").serialize();
 		var method = "POST";
-		var url = "/service/signIn";
+		var url = "/filter/service/signIn";
 	 	if(data){
 		 	var ajax = new XMLHttpRequest();
 		 	ajax.open(method, url, true);
@@ -406,7 +406,7 @@ function getUserBotList(url,elem) {
 }
 
 function addBotToRoom(roomId,botPath) {
-	var url = "/chatRoomService";
+	var url = "/filter/chatRoomService";
 	overlayOn("loader");
 	return $.ajax({
 		url : url,
@@ -425,7 +425,7 @@ function addBotToRoom(roomId,botPath) {
 }
 
 function removeBotFromRoom(roomId,botPath) {
-	var url = "/chatRoomService";
+	var url = "/filter/chatRoomService";
 	overlayOn("loader");
 	return $.ajax({
 		url : url,
@@ -439,7 +439,7 @@ function removeBotFromRoom(roomId,botPath) {
 }
 
 function getChatRoom(roomId) {
-	var url = "/chatRoomService?roomId="+roomId;
+	var url = "/filter/chatRoomService?roomId="+roomId;
 	overlayOn("loader");
 	return $.ajax({
 		url : url,
@@ -478,7 +478,7 @@ $("#logoutFormId").submit(function(e) {
 	e.preventDefault();
 	
  	var ajax = new XMLHttpRequest();
- 	ajax.open("POST", "/service/signOut", true);
+ 	ajax.open("POST", "/filter/service/signOut", true);
  	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
  	ajax.send();
 
@@ -494,7 +494,7 @@ $("#logoutFormId").submit(function(e) {
 
 function sendMessageToChatRoom(roomId,message) {
 	if(message){
-		var url = "/boardcast";
+		var url = "/filter/boardcast";
 		return $.ajax({
 			url : url,
 			cache : false,
@@ -512,7 +512,7 @@ function sendMessageToChatRoom(roomId,message) {
 var roomTimestamp = {};
 
 function refleshText(roomId) {
- var url = "/boardcast";
+ var url = "/filter/boardcast";
  return $.ajax({
   url : url,
   cache : false,
@@ -563,7 +563,7 @@ function checkForValue(json,value) {
 
 function updateBotList(elem) {
 	$.when(getChatRoom(roomId)).done(function(){
-		getUserBotList("/showcaseListChatRoom",elem);
+		getUserBotList("/filter/showcaseListChatRoom",elem);
 	});
 }		
 
@@ -606,7 +606,7 @@ function getShowCase(accountId){
 			for (var i = 0; i < json.length; i++) {
 				var obj = json[i];
 				$("#showCase").append("<div class=\"col-md-2 col-sm-3\">"
-									+"<a href=\""+'/bot/'+obj.propertyMap.accountId+'/'+obj.key.name+"\">"
+									+"<a href=\""+'/filter/bot/'+obj.propertyMap.accountId+'/'+obj.key.name+"\">"
 										+"<div class=\"img-bg\" style=\"background-image:url('"+'/bin/'+obj.propertyMap.accountId+'/'+obj.key.name+"');background-size:100%;\">"
 											+"<div class=\"img-bg\" style=\"background-color:rgba(0, 0, 0, 0.15);display: table;\" >"
 												+"<div class=\"description\" style=\"text-align:left\">"
@@ -693,7 +693,7 @@ function addMessageLeft(message){
 				"</div>";				
 			}else{
 				word = "<div class=\"eoss_msg_l\">" +
-				"<a href=\"/bot/"+message.name+"\"><img src=\""+src+"\"></a>" + 
+				"<a href=\"/filter/bot/"+message.name+"\"><img src=\""+src+"\"></a>" + 
 				message.message + 
 				"</div>";					
 			}

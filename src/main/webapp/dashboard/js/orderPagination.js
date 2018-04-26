@@ -8,7 +8,7 @@ function getOrderLog() {
 	var ajax = new XMLHttpRequest();
 	var fields = $("#selectbotlist").val();
 	var botId = fields.split('_|_');
-	ajax.open("GET", "/orderHistorySevice?botId=" + botId[0], true);
+	ajax.open("GET", "/filter/orderHistorySevice?botId=" + botId[0], true);
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 

@@ -111,7 +111,7 @@
 			fields = selectedUserBot.split('_|_');
 			botId = fields[0];
 			appendBotlistTable(userBotList);
-			getPushCount("/service/v0_001/pusherCountService");
+			getPushCount("/filter/service/v0_001/pusherCountService");
 			getChatlog();
 			getShowCase();
 		});

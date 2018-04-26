@@ -33,7 +33,7 @@ function uploadImg(){
 function getShowCase() {
 	document.getElementById('onOff').checked = false;
 	var http = new XMLHttpRequest();
-	var url = "/addShowCase?botId="+botId;
+	var url = "/filter/addShowCase?botId="+botId;
 	http.open("GET", url, true);
 	// Send the proper header information along with the request
 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -75,7 +75,7 @@ $('#onOff').change(function() {
 	var publish = document.getElementById('onOff').checked;
 
 	var http = new XMLHttpRequest();
-	var url = "/addShowCase";
+	var url = "/filter/addShowCase";
 	var params = "botId=" + botId + "&publish=" + publish+"&title="+$("#title").val()+"&description="+$("#description").val();
 	http.open("POST", url, true);
 	// Send the proper header information along with the request

@@ -34,7 +34,7 @@ function getContextLog() {
 //get Chat log
 function getChatlog(){	
 	var textArea = document.getElementById("chatLogTextArea");
-	var url = "/adminChatLogService?botId="+botId+"&readFlag=false";
+	var url = "/filter/adminChatLogService?botId="+botId+"&readFlag=false";
  	var ajax = new XMLHttpRequest();
  	ajax.open("GET", url, true);
  	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
