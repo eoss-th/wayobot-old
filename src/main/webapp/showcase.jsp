@@ -44,7 +44,9 @@
 					<h1><%= showcase_title %></h1><br>			
 					<img alt="" src="<%=domain%>/bin/<%= bot_accountId %>/<%= bot_botId %>">	
 					<p style="margin-top: 15px;"><%= showcase_description %></p>	
-					<p><%= showcase_owner %></p>
+					<a href="/showncaseList?accountId=<%= bot_accountId %>">
+						<p><%= showcase_owner %></p>
+					</a>
 					<p style="margin-top: 10px">View: <%= bot_viewCount %></p>	
 					<div id="qrcode" style="width:100%; height:100%;">
 					</div>	

@@ -291,7 +291,7 @@ jQuery(document).ready(function ($) {
 		 			var data = ajax.responseText;
 		 			var json = JSON.parse(data);
 		 			if(json.status == "success"){
-		 				window.location.href = "/";
+		 				location.reload();
 		 			}else{
 		 				$("#login-err").html(json.message);
 		 			}
@@ -567,15 +567,28 @@ function updateBotList(elem) {
 	});
 }		
 
-function getShowCase(){
+function getShowCase(accountId){
 	overlayOn('loader');
 	flag = true;
 	var http = new XMLHttpRequest();
-	if(cursor == null){
-		var url = "/getShowcaseList";
+	if(accountId == null){
+		
+		if(cursor == null){
+			var url = "/filter/getShowcaseList";
+		}else{
+			var url = "/filter/getShowcaseList?cursor=" + cursor;
+		}	
+		
 	}else{
-		var url = "/getShowcaseList?cursor=" + cursor;
+		
+		if(cursor == null){
+			var url = "/filter/getShowcaseList?accountId="+accountId;
+		}else{
+			var url = "/filter/getShowcaseList?cursor=" + cursor+"&accountId="+accountId;
+		}		
+		
 	}
+
 	
 	http.open("GET", url, true);
 

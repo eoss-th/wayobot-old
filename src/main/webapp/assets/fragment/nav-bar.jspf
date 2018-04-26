@@ -44,7 +44,7 @@
 							email = (String) session.getAttribute("email");
 					%>
 							<style type="text/css">.cd-pricing-wrapper form{display: block;}.cd-select{display: none !important;}</style>
-							<li><a href="/dashboard/profile.jsp" id="displayUn"></a></li>
+							<li><a href="/showncaseList?accountId=<%= session.getAttribute("accountId") %>" id="displayUn"></a></li>
 							<li><a href="/dashboard/dashboard.jsp"><fmt:message key="sidbar.dashboard" /></a></li>
 							<li><a href="/dashboard/compose.jsp"><fmt:message key="sidbar.compose" /></a></li>
 							<li><a href="/dashboard/show-case.jsp"><fmt:message key="sidbar.showcase" /></a></li>

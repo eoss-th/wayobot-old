@@ -177,9 +177,18 @@ com.eoss.appengine.service.v0_001.ShowcaseListChatRoom
 <servlet-name>ChatRoom</servlet-name>
 <jsp-file>/chatroom.jsp</jsp-file>
 </servlet>
+<servlet>
+<servlet-name>ShowncaseList</servlet-name>
+<jsp-file>/showcase-list.jsp</jsp-file>
+</servlet>
+
 <servlet-mapping>
 <servlet-name>FBSignInService</servlet-name>
 <url-pattern>/fbSignIn</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>ShowncaseList</servlet-name>
+<url-pattern>/showncaseList</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 <servlet-name>ShowcaseListChatRoom</servlet-name>
@@ -223,7 +232,7 @@ com.eoss.appengine.service.v0_001.ShowcaseListChatRoom
 </servlet-mapping>
 <servlet-mapping>
 <servlet-name>GetShowcaseList</servlet-name>
-<url-pattern>/getShowcaseList</url-pattern>
+<url-pattern>/filter/getShowcaseList</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 <servlet-name>ShowCaseLanding</servlet-name>
@@ -333,6 +342,7 @@ com.eoss.appengine.service.v0_001.ShowcaseListChatRoom
 <servlet-name>HelloAppEngine</servlet-name>
 <url-pattern>/hello</url-pattern>
 </servlet-mapping>
+
 <filter>
 <display-name>BotFilter</display-name>
 <filter-name>BotFilter</filter-name>

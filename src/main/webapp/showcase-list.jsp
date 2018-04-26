@@ -21,32 +21,6 @@
 		<div class='loaded'>&nbsp;</div>
 	</div>
 	<%@ include file="/assets/fragment/nav-bar.jspf"%>
-	<% if (session.getAttribute("token") == null) { %>
-	<!--Home page style-->
-	<header id="home" class="home">
-		<div class="overlay-fluid-block">
-			<div class="container text-center">
-				<div class="row">
-					<div class="home-wrapper">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="home-content">
-								<div class="features_buttom">
-									<br><br><br><br><br><br><br><br><br><br><br>
-									
-									<a class="btn btn-default" id="title-content" onclick="overlayOn('register')" style="width: auto;max-width: 100%;font-size: 150%;line-height: 30px; font-weight: bold;">
-										<fmt:message key="text.buildBot" />
-									</a>
-									
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<%} %>
 
 	<section class="contact sections" style="padding: 0px;padding-bottom: 10px;">
 		<div style="width: 100%;padding: 0px;" id="showCase">
@@ -85,7 +59,7 @@
 	</div>
 	
 	<script type="text/javascript">
-		var roomId = "001";
+		var roomId = "<%=request.getParameter("accountId")%>";
 		var username = '<%= userName %>';
 		var domain = '<%=domain%>';
 		var email = '<%=email%>';
@@ -99,20 +73,18 @@
 		$("#displayUn").html(username);
 		var roomEnt;
 		
-		
-		
 		setInterval(function(){ refleshText(roomId); }, 1000);		
 	
 		setInterval(function(){ flag = false }, 2000);
 		$( window ).load( function() {
 			if(flag == false){
-				getShowCase(null);
+				getShowCase("<%=request.getParameter("accountId")%>");
 			}
 			
 			$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
 					   if(flag == false){
-					   		getShowCase(null);
+					   		getShowCase("<%=request.getParameter("accountId")%>");
 					   }
 				   }
 			});
