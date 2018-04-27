@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
-/*
+
 public class DomainFilter implements Filter{
 
 	@Override
@@ -25,14 +25,14 @@ public class DomainFilter implements Filter{
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		
+		/*
 		String origin = req.getHeader("");
 		
 		if (origin==null || !origin.equals(domain)) {
 			resp.sendRedirect(domain);
 			return;
 		}
-		
+		*/
 		chain.doFilter(request, response);	
 	}
 
@@ -43,4 +43,3 @@ public class DomainFilter implements Filter{
 	}
 
 }
-*/

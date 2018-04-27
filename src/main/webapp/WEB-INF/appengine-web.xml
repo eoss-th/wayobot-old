@@ -9,7 +9,7 @@
 		<env-var name="PUSHER_APP_KEY" value="c256028969d0d8721d7d" />
 		<env-var name="PUSHER_APP_SECRET" value="316f255369ff00bdbac3" />
 		<env-var name="PUSHER_CLUSTER" value="ap1" />
-		<env-var name="domain" value="https://wayobot.com" />
+		<env-var name="domain" value="https://shopbot-stg.appspot.com" />
 		<!-- contact popup payment dashboard.jsp -->
 		<env-var name="contactTel" value="+6695 212 0 555" />
 		<env-var name="contactEmail" value="contact@eoss-th.com" />

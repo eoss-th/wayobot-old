@@ -94,6 +94,8 @@ public class ChatRoomService extends HttpServlet{
 				if(botPathArray.contains(botPath)) {
 					if(botPathArray.size() > 1)
 						botPathArray.remove(botPath);
+					
+						
 					else
 						botPathArray.clear();
 					chatRoom.setBotPath(botPathArray);
