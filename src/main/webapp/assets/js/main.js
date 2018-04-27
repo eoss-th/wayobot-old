@@ -383,6 +383,7 @@ function getUserBotList(url,elem) {
 			$("#"+elem).empty();
 			for (var i = 0; i < json.length; i++) {
 				var obj = json[i];
+
 				var flag = checkForValue(roomEnt,obj.key.name);
 				
 				if(flag){

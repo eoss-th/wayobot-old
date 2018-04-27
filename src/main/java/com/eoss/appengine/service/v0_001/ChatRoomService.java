@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.eoss.appengine.bean.ChatRoom;
+import com.eoss.appengine.bean.ShowcaseBotRoom;
 import com.eoss.appengine.dao.ChatRoomDAO;
+import com.eoss.appengine.dao.ShowcaseBotRoomDAO;
 import com.eoss.appengine.helper.SetRespPram;
 import com.google.appengine.api.datastore.Entity;
 import com.google.gson.Gson;
@@ -74,6 +76,31 @@ public class ChatRoomService extends HttpServlet{
 				json = srp.parseJsonStatus("addNewChatRoomBot", chatRoomDao.addRoom(chatRoom),"");
 			}
 			
+			//add chatroom bot stat
+			ShowcaseBotRoomDAO showcaseBotRoomDao = new ShowcaseBotRoomDAO();
+			ShowcaseBotRoom showcaseBotRoom = new ShowcaseBotRoom();
+			showcaseBotRoom.setBotId(req.getParameter("botPath"));
+			Entity showcaseBotRoomEnt = showcaseBotRoomDao.getShowcaseBotRoom(req.getParameter("botPath"));
+			List<String> roomListArray = new ArrayList<String>();
+			if(showcaseBotRoomEnt != null) {
+				if(showcaseBotRoomEnt.getProperty("roomList") != null) {
+					String  roomList = showcaseBotRoomEnt.getProperty("roomList").toString();
+					roomListArray = new ArrayList<String>(Arrays.asList(roomList.replace("[", "").replace("]", "").replaceAll(" ", "").split(",")));
+				}
+				
+				if(!roomListArray.contains(roomId)) {
+					roomListArray.add(roomId);
+					showcaseBotRoom.setRoomList(roomListArray);
+					showcaseBotRoomDao.addShowcaseBotRoom(showcaseBotRoom);
+				}
+			}else {
+				roomListArray.add(roomId);
+				showcaseBotRoom.setRoomList(roomListArray);
+				showcaseBotRoomDao.addShowcaseBotRoom(showcaseBotRoom);
+			}
+
+			
+	
 			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(json);
 		}
@@ -94,16 +121,38 @@ public class ChatRoomService extends HttpServlet{
 				if(botPathArray.contains(botPath)) {
 					if(botPathArray.size() > 1)
 						botPathArray.remove(botPath);
-					
-						
 					else
 						botPathArray.clear();
+					
 					chatRoom.setBotPath(botPathArray);
 					chatRoomDao.addRoom(chatRoom);	
 					json = srp.parseJsonStatus("removeChatRoomBot", chatRoomDao.addRoom(chatRoom), "");
 				}
 			}
 			
+			
+			//add chatroom bot stat
+			ShowcaseBotRoomDAO showcaseBotRoomDao = new ShowcaseBotRoomDAO();
+			ShowcaseBotRoom showcaseBotRoom = new ShowcaseBotRoom();
+			showcaseBotRoom.setBotId(req.getParameter("botPath"));
+			Entity showcaseBotRoomEnt = showcaseBotRoomDao.getShowcaseBotRoom(req.getParameter("botPath"));
+			List<String> roomListArray = new ArrayList<String>();
+			if(showcaseBotRoomEnt != null) {
+				if(showcaseBotRoomEnt.getProperty("roomList") != null) {
+					String  roomList = showcaseBotRoomEnt.getProperty("roomList").toString();
+					roomListArray = new ArrayList<String>(Arrays.asList(roomList.replace("[", "").replace("]", "").replaceAll(" ", "").split(",")));
+				}
+				System.out.println(roomListArray);
+				if(roomListArray.contains(roomId)) {
+					if(roomListArray.size() > 1)
+						roomListArray.remove(roomId);
+					else
+						roomListArray.clear();
+					
+					showcaseBotRoom.setRoomList(roomListArray);
+					showcaseBotRoomDao.addShowcaseBotRoom(showcaseBotRoom);
+				}
+			}
 			resp = srp.setRespHead(resp,System.getenv("domain"));
 			resp.getWriter().write(json);
 		}

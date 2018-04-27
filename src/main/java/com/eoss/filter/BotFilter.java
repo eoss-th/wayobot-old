@@ -18,7 +18,7 @@ public class BotFilter implements Filter {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		if (!req.isSecure()) {
+	/*	if (!req.isSecure()) {
 			String uri = "https://" +   // "http" + "://
 		             req.getServerName() +       // "myhost"
 		             req.getRequestURI() +       // "/people"
@@ -27,7 +27,7 @@ public class BotFilter implements Filter {
 			
 			resp.sendRedirect(uri);
 			return;
-		}
+		}*/
 		
 		HttpServletRequestWrapper requestWrapper = new HttpServletRequestWrapper((HttpServletRequest) request) {
 

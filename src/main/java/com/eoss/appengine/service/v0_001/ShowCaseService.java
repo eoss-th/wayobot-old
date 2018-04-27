@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.eoss.appengine.bean.ShowCase;
+import com.eoss.appengine.bean.ShowcaseBotRoom;
 import com.eoss.appengine.dao.ShowCaseDAO;
+import com.eoss.appengine.dao.ShowcaseBotRoomDAO;
 import com.eoss.appengine.helper.SetRespPram;
 import com.google.appengine.api.datastore.Entity;
 
@@ -79,7 +81,17 @@ public class ShowCaseService extends HttpServlet{
 					showcase.setDescription(description);
 					showcase.setOwner((String) req.getSession().getAttribute("userName"));	
 					showcase.setViewCount(viewCount);
-					json = srp.parseJsonStatus("addSwowCase", showcaseDao.addShowCase(showcase), "");					
+					json = srp.parseJsonStatus("addSwowCase", showcaseDao.addShowCase(showcase), "");
+					
+					if(!publish) {
+						// remove showcase from all chat room
+						ShowcaseBotRoomDAO showcaseBotRoomDao = new ShowcaseBotRoomDAO();
+						Entity showcaseBotRoomEnt = showcaseBotRoomDao.getShowcaseBotRoom(botId);
+						if(showcaseBotRoomEnt != null) {
+							
+							showcaseBotRoomDao.delShowcaseBotRoom(botId);
+						}
+					}
 				}
 			}
 		}

@@ -102,7 +102,7 @@
 		setInterval(function(){ flag = false }, 2000);
 		$( window ).load( function() {
 			if(flag == false){
-				$.when(getUserBotList(getShowCase(null))).done(function(){
+				$.when(getShowCase(null)).done(function(){
 					setInterval(function(){ refleshText(roomId); }, 1000);
 				});
 			}

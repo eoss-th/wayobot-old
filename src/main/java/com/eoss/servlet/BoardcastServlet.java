@@ -59,8 +59,6 @@ public class BoardcastServlet extends HttpServlet {
 		String message = req.getParameter("message");
 		String roomId = req.getParameter("roomId");
 		Chat lastChat = lastMessageMap.get(roomId);
-		System.out.println("message:" + message);
-
 		if (message != null) {
 			if (req.getSession().getAttribute("token") != null) {
 				lastChat = new Chat((String) req.getSession().getAttribute("email"), message);
