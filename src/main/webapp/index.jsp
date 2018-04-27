@@ -99,14 +99,12 @@
 		$("#displayUn").html(username);
 		var roomEnt;
 		
-		
-		
-		setInterval(function(){ refleshText(roomId); }, 1000);		
-	
 		setInterval(function(){ flag = false }, 2000);
 		$( window ).load( function() {
 			if(flag == false){
-				getShowCase(null);
+				$.when(getUserBotList(getShowCase(null))).done(function(){
+					setInterval(function(){ refleshText(roomId); }, 1000);
+				});
 			}
 			
 			$(window).scroll(function() {

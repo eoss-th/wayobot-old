@@ -75,10 +75,13 @@
 		
 		setInterval(function(){ refleshText(roomId); }, 1000);		
 	
-		setInterval(function(){ flag = false }, 2000);
+		
 		$( window ).load( function() {
 			if(flag == false){
-				getShowCase("<%=request.getParameter("accountId")%>");
+				$.when(getUserBotList(getShowCase("<%=request.getParameter("accountId")%>"))).done(function(){
+					setInterval(function(){ flag = false }, 2000);
+				});
+				
 			}
 			
 			$(window).scroll(function() {
