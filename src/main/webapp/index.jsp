@@ -90,7 +90,7 @@
 		var domain = '<%=domain%>';
 		var email = '<%=email%>';
 		var cursor = null; 
-		var flag = false;
+		var scrollflag = false;
 	</script>
 		
 	<%@ include file="/assets/fragment/overlay.jspf"%>
@@ -101,15 +101,13 @@
 		
 		setInterval(function(){ flag = false }, 2000);
 		$( window ).load( function() {
-			if(flag == false){
-				$.when(getShowCase(null)).done(function(){
-					setInterval(function(){ refleshText(roomId); }, 1000);
-				});
+			if(scrollflag == false){
+				getShowCase(null)
 			}
 			
 			$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
-					   if(flag == false){
+					   if(scrollflag == false){
 					   		getShowCase(null);
 					   }
 				   }

@@ -64,7 +64,7 @@
 		var domain = '<%=domain%>';
 		var email = '<%=email%>';
 		var cursor = null; 
-		var flag = false;
+		var scrollflag = false;
 	</script>
 		
 	<%@ include file="/assets/fragment/overlay.jspf"%>
@@ -77,16 +77,13 @@
 	
 		
 		$( window ).load( function() {
-			if(flag == false){
-				$.when(getUserBotList(getShowCase("<%=request.getParameter("accountId")%>"))).done(function(){
-					setInterval(function(){ flag = false }, 2000);
-				});
-				
+			if(scrollflag == false){
+					getShowCase("<%=request.getParameter("accountId")%>");			
 			}
 			
 			$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
-					   if(flag == false){
+					   if(scrollflag == false){
 					   		getShowCase("<%=request.getParameter("accountId")%>");
 					   }
 				   }

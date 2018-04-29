@@ -98,7 +98,9 @@ public class ShowCaseService extends HttpServlet{
 						if(showcaseBotRoomEnt != null) {
 							if(showcaseBotRoomEnt.getProperty("roomList") != null) {
 								String  roomList = showcaseBotRoomEnt.getProperty("roomList").toString();
-								roomListArray = new ArrayList<String>(Arrays.asList(roomList.replace("[", "").replace("]", "").replaceAll(" ", "").split(",")));
+								if(!roomList.isEmpty()) {
+									roomListArray = new ArrayList<String>(Arrays.asList(roomList.replace("[", "").replace("]", "").replaceAll(" ", "").split(",")));
+								}								
 							}
 							ChatRoomDAO chatRoomDao = new ChatRoomDAO();
 							List<String> contextList = new ArrayList<String>();

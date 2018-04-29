@@ -25,7 +25,7 @@
 <html class="no-js" lang="">
 <!--<![endif]-->
 <head>
-<title>Enterprise Open Source Solution</title>
+<title>WAYOBOT</title>
 <%@ include file="/assets/fragment/css.jspf"%>
 </head>
 <body>

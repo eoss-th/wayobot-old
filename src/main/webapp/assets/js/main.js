@@ -570,7 +570,7 @@ function updateBotList(elem) {
 
 function getShowCase(accountId){
 	overlayOn('loader');
-	flag = true;
+	scrollflag = true;
 	var http = new XMLHttpRequest();
 	if(accountId == null){
 		
@@ -621,6 +621,7 @@ function getShowCase(accountId){
 									+"</div>")
 			}
 			overlayOff('loader');
+			scrollflag = false;
 		}
 	}
 	http.send();
