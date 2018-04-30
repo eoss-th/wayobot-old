@@ -292,8 +292,8 @@ function getPaymentButton(botId) {
 	}
 }	
 
-$("#logoutFormId").submit(function(e) {
-	e.preventDefault();
+function logout() {
+
 	
  	var ajax = new XMLHttpRequest();
  	ajax.open("POST", "/filter/service/signOut", true);
@@ -303,12 +303,14 @@ $("#logoutFormId").submit(function(e) {
  	ajax.onreadystatechange = function() {
  	  	if (ajax.readyState == 4 && ajax.status == 200) {		 
  			var data = ajax.responseText;
+ 			console.log(data);
  			if(data == "success"){
+ 				
  				fbLogoutUser();
  			}
  		}
  	}	
-});
+};
 
 $( document ).ready(function() {
 	var pagename = location.pathname.substring(location.pathname.lastIndexOf("/") + 1)+"";

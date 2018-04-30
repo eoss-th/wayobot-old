@@ -65,16 +65,20 @@
 	  }
 
 	  function fbLogoutUser() {
-		   FB.getLoginStatus(function(response) {
-		       if (response && response.status === 'connected') {
-		           FB.logout(function(response) {
-		        	   relocate();
-		           });
-		       }else{
-		    	   relocate();
-		       }
-		   });
-		   
+		  try {
+			   FB.getLoginStatus(function(response) {
+			       if (response && response.status === 'connected') {
+			           FB.logout(function(response) {
+			        	   relocate();
+			           });
+			       }else{
+			    	   relocate();
+			       }
+			   });
+		   }catch(e) {
+			   relocate();
+		   }
+		  
 		}
 	  
 	  function relocate(){

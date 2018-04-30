@@ -75,6 +75,7 @@
 	<%@ include file="fragment/overlay-payment.jspf"%>
 	<%@ include file="fragment/overlay-addbot.jspf"%>
 	<%@ include file="fragment/overlay-loader.jspf"%>
+	
 </body>
 <%@ include file="fragment/env-js.jspf"%>
 <script src="js/api-generate.js"></script> 

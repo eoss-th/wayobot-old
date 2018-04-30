@@ -27,8 +27,8 @@
 				<li>
 					<form id="logoutFormId"
 						style="padding-left: 20px; padding-right: 20px;">
-						<button class="btn btn-default btn-block" type="submit"
-							id="logoutForm" style="background-color: white;"><fmt:message key="btt.logout" /></button>
+						<button class="btn btn-default btn-block" type="button"
+							id="logoutForm" style="background-color: white;" onclick="logout()"><fmt:message key="btt.logout" /></button>
 					</form>
 				</li>
 				<li class="separator hidden-lg"></li>
