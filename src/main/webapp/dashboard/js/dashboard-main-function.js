@@ -184,7 +184,8 @@ function addNewBot() {
 												// state changes.
 			if (http.readyState == 4 && http.status == 200) {
 				var data = http.responseText;
-				if (data == "success") {
+				var json = JSON.parse(data);
+				if (json.status == "success") {
 					location.reload();
 				} else {
 					$(".alert_newbot").remove();

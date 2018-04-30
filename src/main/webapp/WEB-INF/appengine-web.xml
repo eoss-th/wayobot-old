@@ -31,5 +31,7 @@
 		<env-var name="greeting" value="Hello !!" />
 		<env-var name="unknown" value="Sorry...." />
 		<env-var name="title" value="Support ChatBot" />
+		<!-- Facebook Sdk -->
+		<env-var name="facebook_appId" value="183082732326127" />
 	</env-variables>
 </appengine-web-app>

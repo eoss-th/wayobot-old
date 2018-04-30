@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.eoss.appengine.bean.SubAccount;
 import com.eoss.appengine.bean.UserBots;
@@ -83,9 +84,11 @@ public class UserBotService extends HttpServlet{
 			userbot.setMessageCount(0);
 			userbot.setToDayMessage(0);
 			userbot.setRemainMessage(10000);
-			userbot.setUserBotId(notiNumber);		
+			userbot.setUserBotId(notiNumber);	
 			
-			json = userBotDao.addUserBots(userbot);
+			HttpSession session = req.getSession(true);
+			session.setAttribute("botListSelected", notiNumber);
+			json = srp.parseJsonStatus("userbotService", userBotDao.addUserBots(userbot), notiNumber);
 			
 			String contextName = accountId+"/"+notiNumber;
 			
