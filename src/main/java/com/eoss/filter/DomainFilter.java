@@ -2,6 +2,7 @@ package com.eoss.filter;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Enumeration;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -46,12 +47,22 @@ public class DomainFilter implements Filter{
         	reqQueryString = ((HttpServletRequest)request).getQueryString();
         }
         
+        
+        //request header
+        Enumeration<String> headerNames = req.getHeaderNames();
+        StringBuilder sb = new StringBuilder();
+        if (headerNames != null) {
+                while (headerNames.hasMoreElements()) {                      
+                        sb.append(req.getHeader(headerNames.nextElement()).toString()+"\n");
+                }
+        }
+        
         accesslog.setReqHost(reqHost);
         accesslog.setReqIp(reqIp);
         accesslog.setReqPath(reqPath);
         accesslog.setReqQueryString(reqQueryString);
         accesslog.setTimeStamp(timeStamp);
-        
+        accesslog.setReqHeader(sb.toString());
         accesslogDao.addAccessLog(accesslog);
         
 		/*

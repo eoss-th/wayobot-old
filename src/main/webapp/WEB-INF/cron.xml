@@ -9,4 +9,9 @@
     <schedule>every day 0:00</schedule>
     <timezone>Asia/Bangkok</timezone>
   </cron>
+    <cron>
+    <url>/clearAccesslog</url>
+    <schedule>every day 0:00</schedule>
+    <timezone>Asia/Bangkok</timezone>
+  </cron>
 </cronentries>

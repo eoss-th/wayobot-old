@@ -90,6 +90,10 @@ com.eoss.appengine.service.v0_001.ContextLogService
 <servlet-class>com.eoss.appengine.service.v0_001.CleanGGESession</servlet-class>
 </servlet>
 <servlet>
+<servlet-name>CleanAccesslogService</servlet-name>
+<servlet-class>com.eoss.appengine.service.v0_001.CleanAccesslogService</servlet-class>
+</servlet>
+<servlet>
 <servlet-name>LocaleService</servlet-name>
 <servlet-class>com.eoss.appengine.service.v0_001.LocaleService</servlet-class>
 </servlet>
@@ -213,6 +217,10 @@ com.eoss.appengine.service.v0_001.ShowcaseListChatRoom
 <servlet-mapping>
 <servlet-name>CleanGGESession</servlet-name>
 <url-pattern>/clearSessionService</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>CleanAccesslogService</servlet-name>
+<url-pattern>/clearAccesslog</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 <servlet-name>BinaryStorageServlet</servlet-name>

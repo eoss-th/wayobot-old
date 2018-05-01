@@ -7,6 +7,8 @@ public class AccessLog {
 	private String reqHost;
 	private String reqPath;
 	private String reqQueryString;
+	private String reqHeader;
+	private String _createAt;
 	private Date timeStamp;
 	
 	public String getReqIp() {
@@ -39,6 +41,18 @@ public class AccessLog {
 	}
 	public void setReqQueryString(String reqQueryString) {
 		this.reqQueryString = reqQueryString;
+	}
+	public String getReqHeader() {
+		return reqHeader;
+	}
+	public void setReqHeader(String reqHeader) {
+		this.reqHeader = reqHeader;
+	}
+	public String get_createAt() {
+		return _createAt;
+	}
+	public void set_createAt(String _createAt) {
+		this._createAt = _createAt;
 	}
 	
 	
