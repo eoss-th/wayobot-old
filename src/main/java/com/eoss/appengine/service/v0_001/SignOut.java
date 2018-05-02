@@ -32,4 +32,6 @@ public class SignOut extends HttpServlet{
 			resp.getWriter().write("fail");
 		}
 	}
+	
+	
 }

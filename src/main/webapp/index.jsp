@@ -32,11 +32,11 @@
 							<div class="home-content">
 								<div class="features_buttom">
 									<br><br><br><br><br><br><br><br><br><br><br>
-									
+									<!--  
 									<a class="btn btn-default" id="title-content" onclick="overlayOn('register')" style="width: auto;max-width: 100%;font-size: 150%;line-height: 30px; font-weight: bold;">
 										<fmt:message key="text.buildBot" />
 									</a>
-									
+									-->
 								</div>
 								
 							</div>
@@ -83,7 +83,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<img id="fbimg" alt="" src="">
 	<script type="text/javascript">
 		var roomId = "001";
 		var username = '<%= userName %>';
@@ -98,8 +98,7 @@
 	<script type="text/javascript">
 		$("#displayUn").html(username);
 		var roomEnt;
-		
-		setInterval(function(){ flag = false }, 2000);
+		//setInterval(function(){ refleshText(roomId); }, 1000);
 		$( window ).load( function() {
 			if(scrollflag == false){
 				getShowCase(null)

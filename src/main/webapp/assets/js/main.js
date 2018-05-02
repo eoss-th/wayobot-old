@@ -493,14 +493,15 @@ $("#logoutFormId").submit(function(e) {
  	}	
 });
 
-function sendMessageToChatRoom(roomId,message) {
+function sendMessageToChatRoom(roomId,message,img) {
 	if(message){
+		console.log(">>>>"+img);
 		var url = "/filter/boardcast";
 		return $.ajax({
 			url : url,
 			cache : false,
 			type: 'POST',
-			data : {roomId: roomId,message: message},
+			data : {roomId: roomId,message: message,chatImg:img},
 			success : function(json) {
 				appendMessageChatRoom(json);
 				
@@ -540,6 +541,7 @@ function refleshText(roomId) {
 
 function appendMessageChatRoom(json) {
 		$("#eoss_msg_body").empty();
+		console.log(json);
 		for (var i = 0; i < json.length; i++) {
 			if(json[i].name == email){
 				addMessageRight(json[i]);
@@ -674,7 +676,8 @@ eossSendbutton.addEventListener('click', function(event) {
     var msg = document.getElementById("eoss-text-area-chat").value;
     document.getElementById("eoss-text-area-chat").value="";
 	if(msg!=''){
-		sendMessageToChatRoom(roomId,msg);
+		
+		sendMessageToChatRoom(roomId,msg,chatImg);
 	}
 });
 
@@ -685,19 +688,24 @@ function addMessageLeft(message){
 	    	var str = message.name;
 	        var n = str.search("/");
 			var innerBody = document.getElementById("eoss_msg_body");
-			var src = "/bin/"+message.name;
+			var src = "/bin/"+message.chatImg;
 			var word;
-			if(n == -1){
+			if(message.name == "Guest"){
 				src = "/assets/images/guest.png";
 				word = "<div class=\"eoss_msg_l\">" +
 				"<img src=\""+src+"\">" + 
 				message.message + 
 				"</div>";				
-			}else{
+			}else if(message.name == "Bot"){
 				word = "<div class=\"eoss_msg_l\">" +
-				"<a href=\"/filter/bot/"+message.name+"\"><img src=\""+src+"\"></a>" + 
+				"<a href=\"/filter/bot/"+message.chatImg+"\"><img src=\""+src+"\"></a>" + 
 				message.message + 
 				"</div>";					
+			}else{
+				word = "<div class=\"eoss_msg_l\">" +
+				"<img src=\""+message.chatImg+"\">" + 
+				message.message + 
+				"</div>";	
 			}
 			
 			innerBody.innerHTML += word;	

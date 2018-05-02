@@ -116,8 +116,8 @@ public class FBSignInService extends HttpServlet {
 						app_id = account.getApp_id();
 						app_secret = account.getApp_secret();
 						
-						SendEmail sendEmail = new SendEmail();
-						sendEmail.send("text","Facebook Register Success", "Thank you for use our service you can use This email and password to login or use facebook login <br/>Email:"+email+"<br/>Password: "+pwd+"<br/>you can change password in dashboard Profile menu", email, System.getenv("senGridEmail"));
+						//SendEmail sendEmail = new SendEmail();
+						//sendEmail.send("text","Facebook Register Success", "Thank you for use our service you can use This email and password to login or use facebook login <br/>Email:"+email+"<br/>Password: "+pwd+"<br/>you can change password in dashboard Profile menu", email, System.getenv("senGridEmail"));
 						status = srp.parseJsonStatus("Register",setSession(req), "");
 					}
 				}

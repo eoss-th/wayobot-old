@@ -1,3 +1,4 @@
+	<%@ page import="java.util.*" %>
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
@@ -24,6 +25,8 @@
 	  function statusChangeCallback(response){
 		  if(response.status === "connected"){
 			  signInApi();
+		  }else{
+			  logout();
 		  }
 	  }
 	  
@@ -33,7 +36,7 @@
 		  });
 		}
 	  function signInApi(){
-		  FB.api('/me?fields=id,name,email,hometown',function(response){
+		  FB.api('/me?fields=id,name,email,hometown,picture.width(500).height(500)',function(response){
 			  <% if (session.getAttribute("token") == null) { %>
 			  var url = "/filter/fbSignIn";
 
@@ -60,6 +63,13 @@
 				 	  	overlayOff('loader');
 				 	}	
 			  }
+			  <% }else{ %>
+			  		var fbemail = '<%=session.getAttribute("email")%>';
+			  		if(response.email != fbemail){
+			  			logout();
+			  		}else{
+			  			chatImg = response.picture.data.url;
+			  		}
 			  <% } %>
 		  });
 	  }
@@ -84,4 +94,25 @@
 	  function relocate(){
 		  window.location.href = "/";
 	  };
+	  
+	  function logout() {
+
+		  <% if (session.getAttribute("token") != null) { %>
+		 	var ajax = new XMLHttpRequest();
+		 	ajax.open("POST", "/filter/service/signOut", true);
+		 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		 	ajax.send();
+
+		 	ajax.onreadystatechange = function() {
+		 	  	if (ajax.readyState == 4 && ajax.status == 200) {		 
+		 			var data = ajax.responseText;
+		 			console.log(data);
+		 			if(data == "success"){
+		 				
+		 				fbLogoutUser();
+		 			}
+		 		}
+		 	}	
+		 	<% } %>
+		};
 	</script>

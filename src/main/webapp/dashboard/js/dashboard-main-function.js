@@ -293,26 +293,6 @@ function getPaymentButton(botId) {
 	}
 }	
 
-function logout() {
-
-	
- 	var ajax = new XMLHttpRequest();
- 	ajax.open("POST", "/filter/service/signOut", true);
- 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- 	ajax.send();
-
- 	ajax.onreadystatechange = function() {
- 	  	if (ajax.readyState == 4 && ajax.status == 200) {		 
- 			var data = ajax.responseText;
- 			console.log(data);
- 			if(data == "success"){
- 				
- 				fbLogoutUser();
- 			}
- 		}
- 	}	
-};
-
 $( document ).ready(function() {
 	var pagename = location.pathname.substring(location.pathname.lastIndexOf("/") + 1)+"";
 	pagename = pagename.replace(".jsp","");

@@ -58,12 +58,13 @@ public class BoardcastServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String message = req.getParameter("message");
 		String roomId = req.getParameter("roomId");
+		String chatImg = req.getParameter("chatImg");
 		Chat lastChat = lastMessageMap.get(roomId);
 		if (message != null) {
 			if (req.getSession().getAttribute("token") != null) {
-				lastChat = new Chat((String) req.getSession().getAttribute("email"), message);
+				lastChat = new Chat((String) req.getSession().getAttribute("email"), message, chatImg);
 			} else {
-				lastChat = new Chat("Guest", message);
+				lastChat = new Chat("Guest", message, "Guest");
 			}
 		}
 
@@ -128,7 +129,7 @@ public class BoardcastServlet extends HttpServlet {
 						lastMessageMap.put(roomId, lastChat);
 					}
 					if (maxResponse != null) {
-						Chat newChat = new Chat(maxOwner, maxResponse);
+						Chat newChat = new Chat("Bot", maxResponse, maxOwner);
 						messages.add(newChat);
 						lastMessageMap.put(roomId, newChat);
 					}

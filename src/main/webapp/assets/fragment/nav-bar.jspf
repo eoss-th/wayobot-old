@@ -51,20 +51,17 @@
 							<li><a href="/dashboard/push-service.jsp"><fmt:message key="sidbar.pushservice" /></a></li>
 							<li><a href="/dashboard/chat-box.jsp"><fmt:message key="sidbar.chatbotscript" /></a></li>
 							<li><a href="/dashboard/api.jsp"><fmt:message key="sidbar.api" /></a></li>
-							<li class="login"><a id="logout" style="cursor: pointer;width: auto;"><fmt:message key="btt.logout" /></a></li>
+							<li class="login"><a onclick="logout();" style="cursor: pointer;width: auto;"><fmt:message key="btt.logout" /></a></li>
 					<%
 						}else{
 					%>
 							<!--  <li class=\"login\" style=\"width: auto;\"><a onclick=\"overlayOn('register')\" style=\"cursor: pointer;width: auto;\">Register</a></li>;-->
 							<li class="" style="width: auto;"><a class="fbLogin"><fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></a></li>							
-							<li class="login" style="width: auto;"><a onclick="overlayOn('overlay')" style="cursor: pointer;width: auto;"><fmt:message key="btt.login" /></a></li>					
+							<!-- <li class="login" style="width: auto;"><a onclick="overlayOn('overlay')" style="cursor: pointer;width: auto;"><fmt:message key="btt.login" /></a></li>	-->				
 					<% 
 						}
 					}
 					%>
-					<form id="logoutFormId" style="display: none;">
-						<button type="submit" id="logoutForm" ></button>
-					</form>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
