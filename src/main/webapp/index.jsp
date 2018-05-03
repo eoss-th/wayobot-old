@@ -98,7 +98,7 @@
 	<script type="text/javascript">
 		$("#displayUn").html(username);
 		var roomEnt;
-		//setInterval(function(){ refleshText(roomId); }, 1000);
+		setInterval(function(){ refleshText(roomId); }, 1000);
 		$( window ).load( function() {
 			if(scrollflag == false){
 				getShowCase(null)
