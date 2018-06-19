@@ -1,8 +1,8 @@
-account.email=chalat@eoss-th.com
+account.email=contact@eoss-th.com
 eclipse.preferences.version=1
 include.optional.configuration.files=true
 project.bucket=
-project.id=shopbot-stg
+project.id=eoss-wayo-bot
 project.previousVersion.stop=true
 project.promote=true
 project.version=
